@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Tronix2021</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="tab_text_1">Timeline</string>
+    <string name="tab_text_2">About</string>
+    <string name="tab_text_3">Contact</string>
+    <string name="action_settings1">About</string>
+    <string name="action_settings2">Contact</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="postsent">Post your question here</string>
+    <string name="askSignup">Need an account?</string>
+    <string name="askSignin">Already have an account?</string>
+    <string name="about1"><b>Tronix 2021</b> is a social platform to connect all somophores of Electronics and Communication Engineering Department of VNIT to a common network.</string>
+    <string name="about2">Main Section is a forum / newsfeed section where users can add posts, add any question for discussion, comment on posts by others, take part in discussions and much more.</string>
+    <string name="about3">Study Section of app is a common library for all users where they can access to assignments, notes, previous year question papers and practicals. Users can download these content in form of pdf from here and then access it offline later.</string>
+    <string name="about4">Third section of app is attendance manager to enable students to keep a track on their attendance in various subjects. It automatically fetches daily class schedule from server and hence no need to manually setup your timetable.</string>
+    <string name="about5">App is currently under development mode and many other features are yet to be added soon! Feedback and suggestions are welcome!</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="contact_message">For suggestions, complaints and feedback about application, fill the contact form below. Developer team will respond soon!</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Study</string>
+    <string name="title_notifications">Attendance</string>
+    <string name="userinfo">Engineering student at VNIT Nagpur! </string>
+</resources>

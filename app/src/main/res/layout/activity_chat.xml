@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".chat">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/ele_card"
+        android:elevation="12dp"
+        android:gravity="center_vertical"
+        android:padding="3dp">
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/ic_arrow_left_black_24dp"
+            android:background="@android:color/transparent"
+            />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            android:layout_marginLeft="6dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:padding="3dp"
+            android:text="Username"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+
+        <ImageButton
+            android:layout_marginRight="6dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/ic_paperclip_black_24dp"
+            android:background="@android:color/transparent"
+            />
+
+        <ImageButton
+            android:layout_marginRight="6dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/baseline_call_black_24"
+            android:background="@android:color/transparent"
+            />
+
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/slate"
+        android:id="@+id/chat_messages"
+        >
+
+    </android.support.v7.widget.RecyclerView>
+
+
+    <LinearLayout
+        android:gravity="center"
+        android:padding="6dp"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:elevation="8dp">
+
+        <EditText
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/message_box"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="15dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="7dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="12dp"
+            android:layout_weight="1"
+            android:id="@+id/message_text"
+            android:hint="Type a message"
+            android:maxHeight="100dp"
+            />
+
+       <ImageButton
+           android:layout_gravity="bottom"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:src="@mipmap/ic_send_circle_black_48dp"
+           android:background="@android:color/transparent"
+           />
+
+    </LinearLayout>
+
+
+</LinearLayout>
