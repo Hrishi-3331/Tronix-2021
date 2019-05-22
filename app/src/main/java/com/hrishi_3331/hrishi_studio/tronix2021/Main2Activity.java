@@ -61,7 +61,6 @@ public class Main2Activity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
-        getSupportActionBar().setIcon(R.drawable.newlogonow);
         mDrawer = (DrawerLayout) findViewById(R.id.mDrawer);
         mNavigation = (NavigationView) findViewById(R.id.mNavigation);
         mToggle = new ActionBarDrawerToggle(Main2Activity.this, mDrawer, R.string.open, R.string.close);
@@ -266,9 +265,7 @@ public class Main2Activity extends AppCompatActivity {
         }
 
         if (id == R.id.action_privacy) {
-            String url = "http://tronix2021.000webhostapp.com/";
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse(url));
+            Intent intent = new Intent(Main2Activity.this, privacy_policy.class);
             startActivity(intent);
             return true;
         }

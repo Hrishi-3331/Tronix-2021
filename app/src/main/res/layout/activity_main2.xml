@@ -25,15 +25,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:title="@string/app_name">
+            android:background="@drawable/appbar_background"
+            android:theme="@style/ThemeOverlay.AppCompat.Light"
+            app:title="@string/app_name"
+            >
+
+            <ImageView
+                android:paddingTop="8dp"
+                android:id="@+id/btn_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:scaleType="fitCenter"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="center"
+                android:src="@drawable/newlogonow"
+                android:tint="@color/colorPrimary2"/>
 
         </android.support.v7.widget.Toolbar>
 
 
     </android.support.design.widget.AppBarLayout>
-
 
     <android.support.v4.view.ViewPager
         android:id="@+id/container"

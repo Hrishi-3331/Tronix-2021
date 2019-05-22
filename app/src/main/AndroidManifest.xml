@@ -65,7 +65,8 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".chat"></activity>
+        <activity android:name=".chat" />
+        <activity android:name=".privacy_policy"></activity>
     </application>
 
 </manifest>
