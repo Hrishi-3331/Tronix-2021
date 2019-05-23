@@ -1,154 +1,214 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <LinearLayout
+        android:layout_marginBottom="55dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/ecl308"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/subject_card"
-            android:orientation="vertical"
-           >
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="12dp"
-                android:text="Analog Circuit Design"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+            <LinearLayout
+                android:layout_margin="1dp"
+                android:id="@+id/ecl301"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/subject_frame"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-18dp"
-                android:padding="10dp"
-                android:text="ECL 308"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                <ImageView
+                    android:layout_margin="1dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/analog"
+                    android:scaleType="centerCrop"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:text="Analog\nCommunication"
+                    android:textAlignment="center"
+                    />
+
+            </LinearLayout>
+
+                <LinearLayout
+                    android:layout_margin="1dp"
+                    android:id="@+id/eel310"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/subject_frame"
+                    >
+
+                    <ImageView
+                        android:layout_margin="1dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/controlsystems"
+                        android:scaleType="centerCrop"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="6dp"
+                        android:text="Control\nSystems"
+                        android:textAlignment="center"
+                        />
+                </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/mal205"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/subject_card"
-            android:orientation="vertical"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
             >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="12dp"
-                android:text="Numericals Methods and Probability"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_margin="1dp"
+                    android:id="@+id/ecl204"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/subject_frame"
+                    >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-18dp"
-                android:padding="10dp"
-                android:text="MAL 205"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                    <ImageView
+                        android:layout_margin="1dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/instrumentation"
+                        android:scaleType="centerCrop"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="6dp"
+                        android:text="Measurements and Instrumentation"
+                        android:textAlignment="center"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_margin="1dp"
+                    android:id="@+id/ecl405"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/subject_frame"
+                    >
+
+                    <ImageView
+                        android:layout_margin="1dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/antenna"
+                        android:scaleType="centerCrop"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="6dp"
+                        android:text="Wave Guides and Antennas"
+                        android:textAlignment="center"
+                        />
+
+                </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ecl211"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/subject_card"
-            android:orientation="vertical"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
             >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="12dp"
-                android:text="Signals and Systems"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_margin="1dp"
+                    android:id="@+id/ecl401"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/subject_frame"
+                    >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-18dp"
-                android:padding="10dp"
-                android:text="ECL 211"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                    <ImageView
+                        android:layout_margin="1dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/hdl"
+                        android:scaleType="centerCrop"
+                        />
 
-        </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="6dp"
+                        android:text="Hardware Description Language"
+                        android:textAlignment="center"
+                        />
 
-        <LinearLayout
-            android:id="@+id/ecl305"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/subject_card"
-            android:orientation="vertical"
-            >
+                </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="12dp"
-                android:text="Electromagnetic Fields"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                <LinearLayout
+                    android:id="@+id/csll01"
+                    android:layout_margin="1dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/subject_frame"
+                    >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-18dp"
-                android:padding="10dp"
-                android:text="ECL 305"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                    <ImageView
+                        android:layout_margin="1dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/cao"
+                        android:scaleType="centerCrop"
+                        />
 
-        </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="6dp"
+                        android:text="Computer Architecture and Organization"
+                        android:textAlignment="center"
+                        />
 
-        <LinearLayout
-            android:id="@+id/ecl306"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/subject_card"
-            android:orientation="vertical"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="12dp"
-                android:text="Microprocessors and Interfacing"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-18dp"
-                android:padding="10dp"
-                android:text="ECL 306"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                </LinearLayout>
 
         </LinearLayout>
 
     </LinearLayout>
-</ScrollView>
+</LinearLayout>
 

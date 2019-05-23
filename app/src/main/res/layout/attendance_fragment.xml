@@ -23,9 +23,6 @@
 
     <LinearLayout
         android:elevation="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginLeft="4dp"
         android:id="@+id/addPost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -58,10 +55,20 @@
                 android:hint="@string/postsent"
                 android:layout_weight="1"
                 android:gravity="top"
-                android:padding="5dp"
+                android:padding="15dp"
                 android:background="@drawable/input_box"/>
         </LinearLayout>
     </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/app_promo"
+            android:orientation="vertical"
+            >
+
+
+        </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:layout_marginTop="2dp"

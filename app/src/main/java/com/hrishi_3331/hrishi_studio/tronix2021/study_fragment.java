@@ -16,7 +16,7 @@ public class study_fragment extends Fragment implements View.OnClickListener{
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.study_fragment, container, false);
        int[] ids = {
-               R.id.ecl308, R.id.ecl211, R.id.ecl306, R.id.ecl305, R.id.mal205
+               R.id.ecl301, R.id.eel310, R.id.ecl204, R.id.ecl405, R.id.ecl401, R.id.csll01
        };
 
        for (int id : ids){
@@ -29,34 +29,40 @@ public class study_fragment extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         Intent intent = new Intent(getActivity(), subject.class);
         switch (v.getId()){
-            case R.id.ecl308:
-                intent.putExtra("sub", "Analog Circuit Design");
-                intent.putExtra("code", "ecl 308");
+            case R.id.ecl301:
+                intent.putExtra("sub", "Analog Communication");
+                intent.putExtra("code", "ecl 301");
                 startActivity(intent);
                 break;
 
-            case R.id.ecl211:
-                intent.putExtra("sub", "Signals and Systems");
-                intent.putExtra("code", "ecl 211");
+            case R.id.eel310:
+                intent.putExtra("sub", "Control Systems");
+                intent.putExtra("code", "eel 310");
                 startActivity(intent);
                 break;
 
 
-            case R.id.ecl306:
-                intent.putExtra("sub", "Microprocessors and Interfacing");
-                intent.putExtra("code", "ecl 306");
+            case R.id.ecl204:
+                intent.putExtra("sub", "Measurements and Instrumentations");
+                intent.putExtra("code", "ecl 204");
                 startActivity(intent);
                 break;
 
-            case R.id.ecl305:
-                intent.putExtra("sub", "Electromagnetic Fields");
-                intent.putExtra("code", "ecl 305");
+            case R.id.ecl405:
+                intent.putExtra("sub", "Wave Guides and Antennas");
+                intent.putExtra("code", "ecl 405");
                 startActivity(intent);
                 break;
 
-            case R.id.mal205:
-                intent.putExtra("sub", "Numerical Methods and Probability");
-                intent.putExtra("code", "mal 205");
+            case R.id.ecl401:
+                intent.putExtra("sub", "Hardware Description Language");
+                intent.putExtra("code", "ecl 401");
+                startActivity(intent);
+                break;
+
+            case R.id.csll01:
+                intent.putExtra("sub", "Computer Architecture and Organization");
+                intent.putExtra("code", "csl 101");
                 startActivity(intent);
                 break;
 

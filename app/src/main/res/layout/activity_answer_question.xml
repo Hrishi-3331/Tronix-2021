@@ -10,7 +10,7 @@
     android:focusableInTouchMode="true"
     >
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -20,17 +20,18 @@
         >
 
         <ImageButton
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
             android:background="@android:color/transparent"
             android:onClick="cancelAns"
             android:scaleType="fitXY"
             android:src="@android:drawable/ic_menu_close_clear_cancel" />
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:padding="14dp"
             android:text="WRITE ANSWER"
             android:textAlignment="center"
@@ -38,7 +39,7 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-    </LinearLayout>
+    </FrameLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -67,7 +68,6 @@
                 android:id="@+id/answer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="200dp"
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="4dp"
                 android:background="@drawable/input_2_box"
@@ -76,7 +76,8 @@
                 android:gravity="top"
                 android:hint="Answer here"
                 android:inputType="textMultiLine"
-                android:padding="4dp"
+                android:minHeight="200dp"
+                android:padding="8dp"
                 android:textColor="@android:color/black"
                 android:textSize="17sp" />
 

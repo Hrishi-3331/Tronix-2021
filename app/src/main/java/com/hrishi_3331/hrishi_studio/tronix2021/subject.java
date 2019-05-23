@@ -4,7 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -18,18 +18,16 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.List;
 import java.util.Objects;
 
-public class subject extends AppCompatActivity implements View.OnClickListener{
+public class subject extends AppCompatActivity {
 
     String code;
     RecyclerView m_assignments, m_notes, m_qpapers, m_prac;
     DatabaseReference mref;
-    LinearLayout ass_tab, notes_tab, qpapers_tab, prac_tab;
-    boolean temp;
     DatabaseReference ref1, ref2, ref3, ref4;
     private LinearLayout nodata;
+    private TabLayout sub_tab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +47,6 @@ public class subject extends AppCompatActivity implements View.OnClickListener{
             }
         }
 
-        temp = true;
-
         Objects.requireNonNull(getSupportActionBar()).setTitle(intent.getStringExtra("sub"));
         code = intent.getStringExtra("code");
 
@@ -59,15 +55,7 @@ public class subject extends AppCompatActivity implements View.OnClickListener{
         m_qpapers = (RecyclerView)findViewById(R.id.m_qpapers);
         m_prac = (RecyclerView)findViewById(R.id.m_prac);
 
-        ass_tab = (LinearLayout)findViewById(R.id.assignment_tab);
-        notes_tab = (LinearLayout)findViewById(R.id.notes_tab);
-        qpapers_tab = (LinearLayout)findViewById(R.id.qpapers_tab);
-        prac_tab = (LinearLayout)findViewById(R.id.prac_tab);
-
-        ass_tab.setOnClickListener(this);
-        notes_tab.setOnClickListener(this);
-        qpapers_tab.setOnClickListener(this);
-        prac_tab.setOnClickListener(this);
+        sub_tab = (TabLayout)findViewById(R.id.sub_tabs);
 
         m_assignments.setLayoutManager(new LinearLayoutManager(subject.this));
         m_qpapers.setLayoutManager(new LinearLayoutManager(subject.this));
@@ -82,6 +70,53 @@ public class subject extends AppCompatActivity implements View.OnClickListener{
 
         nodata = (LinearLayout)findViewById(R.id.no_data);
         nodata.setVisibility(View.GONE);
+
+        m_assignments.setVisibility(View.VISIBLE);
+
+        sub_tab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                switch (tab.getPosition()){
+                    case 0:
+                        m_assignments.setVisibility(View.VISIBLE);
+                        m_qpapers.setVisibility(View.GONE);
+                        m_notes.setVisibility(View.GONE);
+                        m_prac.setVisibility(View.GONE);
+                        break;
+
+                    case 1:
+                        m_assignments.setVisibility(View.GONE);
+                        m_qpapers.setVisibility(View.GONE);
+                        m_notes.setVisibility(View.VISIBLE);
+                        m_prac.setVisibility(View.GONE);
+                        break;
+
+                    case 2:
+                        m_assignments.setVisibility(View.GONE);
+                        m_qpapers.setVisibility(View.VISIBLE);
+                        m_notes.setVisibility(View.GONE);
+                        m_prac.setVisibility(View.GONE);
+                        break;
+
+                    case 3:
+                        m_assignments.setVisibility(View.GONE);
+                        m_qpapers.setVisibility(View.GONE);
+                        m_notes.setVisibility(View.GONE);
+                        m_prac.setVisibility(View.VISIBLE);
+                        break;
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
 
     }
 
@@ -145,112 +180,4 @@ public class subject extends AppCompatActivity implements View.OnClickListener{
         m_qpapers.setAdapter(qpaper_adapter);
 
     }
-
-
-    @Override
-    public void onClick(View v) {
-
-        switch (v.getId()) {
-            case R.id.assignment_tab:
-                if (temp) {
-                    ass_tab.setVisibility(View.VISIBLE);
-                    prac_tab.setVisibility(View.GONE);
-                    notes_tab.setVisibility(View.GONE);
-                    qpapers_tab.setVisibility(View.GONE);
-                    m_assignments.setVisibility(View.VISIBLE);
-                    m_prac.setVisibility(View.GONE);
-                    m_notes.setVisibility(View.GONE);
-                    m_qpapers.setVisibility(View.GONE);
-                    temp = false;
-                } else {
-                    ass_tab.setVisibility(View.VISIBLE);
-                    prac_tab.setVisibility(View.VISIBLE);
-                    notes_tab.setVisibility(View.VISIBLE);
-                    qpapers_tab.setVisibility(View.VISIBLE);
-                    temp = true;
-                    m_assignments.setVisibility(View.GONE);
-                    m_prac.setVisibility(View.GONE);
-                    m_notes.setVisibility(View.GONE);
-                    m_qpapers.setVisibility(View.GONE);
-                }
-                break;
-
-            case R.id.notes_tab:
-                if (temp){
-                    ass_tab.setVisibility(View.GONE);
-                    prac_tab.setVisibility(View.GONE);
-                    notes_tab.setVisibility(View.VISIBLE);
-                    qpapers_tab.setVisibility(View.GONE);
-                    m_assignments.setVisibility(View.GONE);
-                    m_prac.setVisibility(View.GONE);
-                    m_notes.setVisibility(View.VISIBLE);
-                    m_qpapers.setVisibility(View.GONE);
-                    temp = false;
-                     }
-                     else {
-                    ass_tab.setVisibility(View.VISIBLE);
-                    prac_tab.setVisibility(View.VISIBLE);
-                    notes_tab.setVisibility(View.VISIBLE);
-                    qpapers_tab.setVisibility(View.VISIBLE);
-                    m_assignments.setVisibility(View.GONE);
-                    m_prac.setVisibility(View.GONE);
-                    m_notes.setVisibility(View.GONE);
-                    m_qpapers.setVisibility(View.GONE);
-                    nodata.setVisibility(View.GONE);
-                    temp = true;
-            }
-                break;
-
-            case R.id.qpapers_tab:
-                if (temp) {
-                    ass_tab.setVisibility(View.GONE);
-                    prac_tab.setVisibility(View.GONE);
-                    notes_tab.setVisibility(View.GONE);
-                    qpapers_tab.setVisibility(View.VISIBLE);
-                    m_assignments.setVisibility(View.GONE);
-                    m_prac.setVisibility(View.GONE);
-                    m_notes.setVisibility(View.GONE);
-                    m_qpapers.setVisibility(View.VISIBLE);
-                    temp = false;
-                }
-                else {
-                    ass_tab.setVisibility(View.VISIBLE);
-                    prac_tab.setVisibility(View.VISIBLE);
-                    notes_tab.setVisibility(View.VISIBLE);
-                    qpapers_tab.setVisibility(View.VISIBLE);
-                    m_assignments.setVisibility(View.GONE);
-                    m_prac.setVisibility(View.GONE);
-                    m_notes.setVisibility(View.GONE);
-                    m_qpapers.setVisibility(View.GONE);
-                    temp = true;
-                }
-                break;
-
-            case R.id.prac_tab:
-                if (temp) {
-                    ass_tab.setVisibility(View.GONE);
-                    prac_tab.setVisibility(View.VISIBLE);
-                    notes_tab.setVisibility(View.GONE);
-                    qpapers_tab.setVisibility(View.GONE);
-                    m_assignments.setVisibility(View.GONE);
-                    m_prac.setVisibility(View.VISIBLE);
-                    m_notes.setVisibility(View.GONE);
-                    m_qpapers.setVisibility(View.GONE);
-                    temp = false;
-                }
-               else {
-                ass_tab.setVisibility(View.VISIBLE);
-                prac_tab.setVisibility(View.VISIBLE);
-                notes_tab.setVisibility(View.VISIBLE);
-                qpapers_tab.setVisibility(View.VISIBLE);
-                m_assignments.setVisibility(View.GONE);
-                m_prac.setVisibility(View.GONE);
-                m_notes.setVisibility(View.GONE);
-                m_qpapers.setVisibility(View.GONE);
-                temp = true;
-            }
-            break;
-        }
-    }
-
 }
