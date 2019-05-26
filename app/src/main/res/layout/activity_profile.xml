@@ -8,140 +8,146 @@
     tools:context=".profile"
     android:background="@color/colorLight">
 
-    <android.support.v7.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:id="@+id/profile_toolbar"
-        android:elevation="8dp"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-    </android.support.v7.widget.Toolbar>
 
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:id="@+id/profile_toolbar"
+            android:elevation="8dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Light">
+        </android.support.v7.widget.Toolbar>
 
-    <LinearLayout
-        android:layout_marginTop="10dp"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:padding="14dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:elevation="4.4dp"
-        android:layout_marginBottom="-70dp"
-        android:background="@drawable/image_frame"
-        >
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_marginTop="-55dp"
+            android:layout_marginBottom="-180dp"
+            android:id="@+id/user_cover_photo"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
             android:scaleType="centerCrop"
-            android:id="@+id/profile_image"
+            android:src="@drawable/tronixsplash"
             />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:background="@drawable/profile_box"
-        android:gravity="center_horizontal"
-        android:layout_height="wrap_content">
-
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:paddingTop="2dp"
-            android:paddingBottom="2dp"
-            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:padding="14dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:elevation="4.4dp"
+            android:layout_marginBottom="-70dp"
+            android:background="@drawable/image_frame"
             >
 
-           <LinearLayout
-               android:layout_marginTop="8dp"
-               android:layout_width="80dp"
-               android:layout_height="wrap_content"
-               android:gravity="center"
-               >
-
-               <ImageButton
-                   android:layout_width="50dp"
-                   android:layout_height="50dp"
-                   android:background="@android:color/transparent"
-                   android:src="@mipmap/baseline_settings_black_24"/>
-
-           </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
-
-            <LinearLayout
-                android:layout_marginTop="8dp"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                >
-
-                <ImageButton
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="@android:color/transparent"
-                    android:src="@mipmap/baseline_border_color_black_24"/>
-
-            </LinearLayout>
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:id="@+id/profile_image"
+                />
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/prof_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:text="Usernamehere"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textAlignment="center"/>
-
-        <TextView
-            android:id="@+id/prof_enrol"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-18dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="4dp"
-            android:text="BT17ECEXXX"
-            android:textAlignment="center"
-            android:textAllCaps="true"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginBottom="10dp"
-            android:text="@string/userinfo"
-            android:textAlignment="center"
-            android:textSize="15sp"
-            android:padding="8dp"
-            android:background="@drawable/aboutbox"
-            />
-
-
-    </LinearLayout>
-
         <LinearLayout
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             android:layout_width="match_parent"
             android:orientation="vertical"
             android:background="@drawable/profile_box"
-            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:orientation="horizontal"
+                >
+
+               <LinearLayout
+                   android:layout_marginTop="8dp"
+                   android:layout_width="80dp"
+                   android:layout_height="wrap_content"
+                   android:gravity="center"
+                   >
+
+                   <ImageButton
+                       android:layout_width="50dp"
+                       android:layout_height="50dp"
+                       android:background="@android:color/transparent"
+                       android:src="@mipmap/baseline_settings_black_24"/>
+
+               </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <LinearLayout
+                    android:layout_marginTop="8dp"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    >
+
+                    <ImageButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@android:color/transparent"
+                        android:src="@mipmap/baseline_border_color_black_24"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/prof_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Usernamehere"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/prof_enrol"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-18dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="4dp"
+                android:text="BT17ECEXXX"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/userinfo"
+                android:textAlignment="center"
+                android:textSize="15sp"
+                android:padding="8dp"
+                android:background="@drawable/aboutbox"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@android:color/white"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
             android:gravity="center_horizontal"
             android:layout_height="match_parent">
 
@@ -150,12 +156,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_scrollFlags="enterAlways">
-
-            <android.support.design.widget.TabItem
-                android:id="@+id/tabItem"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tab_text_1" />
 
             <android.support.design.widget.TabItem
                 android:id="@+id/tabItem2"
