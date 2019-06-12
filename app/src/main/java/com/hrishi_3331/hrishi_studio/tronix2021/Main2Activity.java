@@ -139,7 +139,7 @@ public class Main2Activity extends AppCompatActivity {
                         break;
 
                     case R.id.message_act:
-                        startActivity(new Intent(Main2Activity.this, chat.class));
+                        startActivity(new Intent(Main2Activity.this, Messages.class));
                         break;
 
                     default:

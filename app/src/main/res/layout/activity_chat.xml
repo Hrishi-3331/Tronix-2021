@@ -23,19 +23,23 @@
             />
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:id="@+id/m_image"
+            android:layout_width="40dp"
 
-            android:layout_marginLeft="6dp" />
+            android:layout_height="40dp"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="6dp" />
 
         <TextView
+            android:id="@+id/m_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="7dp"
             android:padding="3dp"
             android:text="Username"
             android:textColor="@android:color/black"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -45,12 +49,12 @@
             />
 
         <ImageButton
-            android:layout_marginRight="6dp"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@mipmap/ic_paperclip_black_24dp"
+            android:layout_marginRight="6dp"
             android:background="@android:color/transparent"
-            />
+            android:src="@mipmap/ic_paperclip_black_24dp"
+            android:visibility="gone" />
 
         <ImageButton
             android:layout_marginRight="6dp"
@@ -85,21 +89,20 @@
         android:elevation="8dp">
 
         <EditText
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/message_box"
+            android:id="@+id/new_message"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/message_box"
+            android:hint="Type a message"
+            android:maxHeight="100dp"
             android:minHeight="15dp"
-            android:paddingTop="6dp"
             android:paddingBottom="7dp"
             android:paddingLeft="15dp"
             android:paddingRight="12dp"
-            android:layout_weight="1"
-            android:id="@+id/message_text"
-            android:hint="Type a message"
-            android:maxHeight="100dp"
-            />
+            android:paddingTop="6dp" />
 
        <ImageButton
            android:layout_gravity="bottom"

@@ -3,6 +3,7 @@ package com.hrishi_3331.hrishi_studio.tronix2021;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -29,6 +30,7 @@ public class contact extends AppCompatActivity {
         android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar)findViewById(R.id.contact_toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Contact Form");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mref = FirebaseDatabase.getInstance().getReference().child("UserMessages");
         mAuth = FirebaseAuth.getInstance();
@@ -36,6 +38,12 @@ public class contact extends AppCompatActivity {
 
         subject = (EditText)findViewById(R.id.contact_subject);
         message = (EditText)findViewById(R.id.contact_message);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        finish();
+        return true;
     }
 
     public void sendMessage(View view){

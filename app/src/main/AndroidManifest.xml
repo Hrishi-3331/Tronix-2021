@@ -66,11 +66,13 @@
         </service>
 
         <activity android:name=".chat" />
-        <activity android:name=".privacy_policy"></activity>
+        <activity android:name=".privacy_policy" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <activity android:name=".Messages"></activity>
     </application>
 
 </manifest>

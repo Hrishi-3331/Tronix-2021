@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/notice_card"
-    android:layout_marginTop="6dp"
-    android:layout_marginRight="3dp"
-    android:layout_marginLeft="3dp"
+    android:background="@android:color/white"
     >
 
     <LinearLayout
@@ -25,10 +23,12 @@
             android:id="@+id/notice_tt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/robotoblack"
             android:textAlignment="viewStart"
             android:textColor="@android:color/background_dark"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:text="Notice Title" />
 
     </LinearLayout>
 
@@ -48,22 +48,22 @@
     </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="1.5dp"
-        android:background="@android:color/darker_gray"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"/>
-
     <TextView
         android:id="@+id/notice_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:textSize="16sp"
-        android:paddingTop="6dp"
+        android:layout_marginTop="-12dp"
         android:paddingBottom="6dp"
+        android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:paddingLeft="10dp"/>
+        android:paddingTop="6dp"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        />
 
 </LinearLayout>

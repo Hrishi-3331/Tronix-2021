@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -26,6 +27,7 @@ public class notifications extends AppCompatActivity {
         Toolbar toolbar = (Toolbar)findViewById(R.id.notifications_toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Student Notices");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         noticeView = (RecyclerView)findViewById(R.id.noticeView);
         mref = FirebaseDatabase.getInstance().getReference().child("notices");
@@ -35,6 +37,12 @@ public class notifications extends AppCompatActivity {
         manager.setSmoothScrollbarEnabled(true);
         noticeView.setLayoutManager(manager);
         noticeView.hasFixedSize();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        finish();
+        return true;
     }
 
     @Override
