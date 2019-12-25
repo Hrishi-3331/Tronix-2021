@@ -134,10 +134,6 @@ public class Main2Activity extends AppCompatActivity {
                         startActivity(new Intent(Main2Activity.this, notifications.class));
                         break;
 
-                    case R.id.friends:
-                        startActivity(new Intent(Main2Activity.this, classmates.class));
-                        break;
-
                     case R.id.message_act:
                         startActivity(new Intent(Main2Activity.this, Messages.class));
                         break;
@@ -179,6 +175,10 @@ public class Main2Activity extends AppCompatActivity {
                         navigation.setSelectedItemId(R.id.navigation_attendance);
                         break;
 
+                    case 3:
+                        navigation.setSelectedItemId(R.id.navigation_classmates);
+                        break;
+
                     default:
                         break;
                 }
@@ -206,6 +206,9 @@ public class Main2Activity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_attendance:
                     mViewPager.setCurrentItem(2,true);
+                    return true;
+                case R.id.navigation_classmates:
+                    mViewPager.setCurrentItem(3,true);
                     return true;
             }
             return false;
@@ -298,6 +301,9 @@ public class Main2Activity extends AppCompatActivity {
                 case 2:
                     return new attendance_fragment();
 
+                case 3:
+                    return new classmatesFragment();
+
                 default:
                     return null;
             }
@@ -306,7 +312,7 @@ public class Main2Activity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 3;
+            return 4;
         }
     }
 

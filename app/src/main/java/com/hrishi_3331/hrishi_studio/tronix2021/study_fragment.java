@@ -16,7 +16,7 @@ public class study_fragment extends Fragment implements View.OnClickListener{
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.study_fragment, container, false);
        int[] ids = {
-               R.id.ecl301, R.id.eel310, R.id.ecl204, R.id.ecl405, R.id.ecl401, R.id.csll01
+               R.id.ENL302, R.id.ENL302, R.id.ECL426, R.id.ECL303, R.id.ECL415, R.id.ECL304
        };
 
        for (int id : ids){
@@ -29,40 +29,52 @@ public class study_fragment extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         Intent intent = new Intent(getActivity(), subject.class);
         switch (v.getId()){
-            case R.id.ecl301:
-                intent.putExtra("sub", "Analog Communication");
-                intent.putExtra("code", "ecl 301");
+            case R.id.ENL302:
+                intent.putExtra("sub", "DEVICE MODELING");
+                intent.putExtra("code", "ENL302");
                 startActivity(intent);
                 break;
 
-            case R.id.eel310:
-                intent.putExtra("sub", "Control Systems");
-                intent.putExtra("code", "eel 310");
+            case R.id.ECL403:
+                intent.putExtra("sub", "Embedded Systems");
+                intent.putExtra("code", "ECL403");
                 startActivity(intent);
                 break;
 
 
-            case R.id.ecl204:
-                intent.putExtra("sub", "Measurements and Instrumentations");
-                intent.putExtra("code", "ecl 204");
+            case R.id.ECL426:
+                intent.putExtra("sub", "ADVANCED MICROPROCESSOR AND INTERFACING");
+                intent.putExtra("code", "ECL426");
                 startActivity(intent);
                 break;
 
-            case R.id.ecl405:
-                intent.putExtra("sub", "Wave Guides and Antennas");
-                intent.putExtra("code", "ecl 405");
+            case R.id.ECL303:
+                intent.putExtra("sub", "Digital Communication");
+                intent.putExtra("code", "ECL303");
                 startActivity(intent);
                 break;
 
-            case R.id.ecl401:
-                intent.putExtra("sub", "Hardware Description Language");
-                intent.putExtra("code", "ecl 401");
+            case R.id.ECL415:
+                intent.putExtra("sub", "ELECTRONIC SYSTEM DESIGN");
+                intent.putExtra("code", "ECL415");
                 startActivity(intent);
                 break;
 
-            case R.id.csll01:
-                intent.putExtra("sub", "Computer Architecture and Organization");
-                intent.putExtra("code", "csl 101");
+            case R.id.ECL304:
+                intent.putExtra("sub", "Digital Signal Processing");
+                intent.putExtra("code", "ECL304");
+                startActivity(intent);
+                break;
+
+            case R.id.ECL404:
+                intent.putExtra("sub", "RF & MICROWAVE ENGINEERING");
+                intent.putExtra("code", "ECL404");
+                startActivity(intent);
+                break;
+
+            case R.id.CSL312:
+                intent.putExtra("sub", "OPERATING SYSTEMS");
+                intent.putExtra("code", "CSL312");
                 startActivity(intent);
                 break;
 

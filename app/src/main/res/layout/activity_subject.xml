@@ -34,7 +34,7 @@
             android:id="@+id/assignment_tab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Assignments" />
+            android:text="@string/assignments" />
 
         <android.support.design.widget.TabItem
             android:id="@+id/notes_tab"

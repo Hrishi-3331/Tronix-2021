@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center"
-    >
+    android:gravity="center">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,14 +13,15 @@
         android:orientation="horizontal"
         android:gravity="center">
 
-    <ImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="6dp"
-        android:id="@+id/user_import_image"
-        android:scaleType="centerCrop"
-        />
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:riv_corner_radius="30dp"
+            android:id="@+id/user_import_image"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:scaleType="centerCrop"
+            />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -36,6 +38,7 @@
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:fontFamily="@font/robotobold"
             android:padding="4dp"/>
 
         <TextView
@@ -45,9 +48,10 @@
             android:text="BT17ECEXXX"
             android:textAlignment="viewStart"
             android:textColor="@android:color/darker_gray"
-            android:textSize="15sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             android:paddingTop="-2dp"
+            android:fontFamily="@font/robotoregular"
             android:paddingBottom="4dp"
             android:paddingLeft="4dp"
             android:paddingRight="4dp"/>
@@ -56,25 +60,28 @@
 
         <ImageButton
             android:id="@+id/user_import_message"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginRight="20dp"
-            android:background="@android:color/transparent"
-            android:src="@mipmap/baseline_forum_black_36" />
+            android:background="@drawable/roundicon"
+            android:src="@mipmap/baseline_forum_black_24"
+            android:tint="@android:color/white"
+            />
 
         <ImageButton
+            android:background="@drawable/roundicon"
+            android:tint="@android:color/white"
             android:id="@+id/user_import_call"
-            android:layout_width="25dp"
-            android:layout_height="30dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginRight="16dp"
-            android:background="@android:color/transparent"
-            android:src="@mipmap/baseline_call_black_36" />
+            android:src="@mipmap/baseline_call_black_24" />
 
 </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="1.5dp"
+        android:layout_height="0.5dp"
         android:background="@android:color/darker_gray"/>
 
 </LinearLayout>

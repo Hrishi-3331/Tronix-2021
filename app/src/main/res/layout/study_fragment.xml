@@ -4,22 +4,26 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        >
+
     <LinearLayout
         android:layout_marginBottom="55dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="180dp"
             android:orientation="horizontal"
             >
 
             <LinearLayout
-                android:layout_margin="1dp"
-                android:id="@+id/ecl301"
+                android:id="@+id/ENL302"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -27,188 +31,237 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_margin="1dp"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:src="@drawable/analog"
                     android:scaleType="centerCrop"
-                    />
+                    android:src="@drawable/analog" />
+
+                <TextView
+                    android:fontFamily="@font/robotobold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:padding="6dp"
+                    android:text="DEVICE MODELING"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ECL304"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/subject_frame"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dsp" />
+
+                <TextView
+                    android:fontFamily="@font/robotobold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:text="DIGITAL SIGNAL PROCESSING"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:id="@+id/ECL303"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/subject_frame"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="180dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dc" />
+
+                <TextView
+                    android:fontFamily="@font/robotobold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:text="DIGITAL COMMUNICATION"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ECL403"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/subject_frame"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/emb" />
+
+                <TextView
+                    android:fontFamily="@font/robotobold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:padding="6dp"
+                    android:text="EMBEDDED SYSTEMS"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:id="@+id/ECL426"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/subject_frame"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/hdl" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/robotobold"
                     android:padding="6dp"
-                    android:text="Analog\nCommunication"
+                    android:text="ADVANCED MICROPROCESSOR AND INTERFACING"
                     android:textAlignment="center"
-                    />
+                    android:textColor="@color/colorPrimaryDark" />
 
             </LinearLayout>
 
-                <LinearLayout
-                    android:layout_margin="1dp"
-                    android:id="@+id/eel310"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
+            <LinearLayout
+                android:id="@+id/ECL415"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/subject_frame"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:background="@drawable/subject_frame"
-                    >
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/esd" />
 
-                    <ImageView
-                        android:layout_margin="1dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/controlsystems"
-                        android:scaleType="centerCrop"
-                        />
+                <TextView
+                    android:fontFamily="@font/robotobold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:text="ELECTRONIC SYSTEM DESIGN"
+                    android:textAlignment="center" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="6dp"
-                        android:text="Control\nSystems"
-                        android:textAlignment="center"
-                        />
-                </LinearLayout>
+            </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="180dp"
             android:orientation="horizontal"
             >
 
-                <LinearLayout
-                    android:layout_margin="1dp"
-                    android:id="@+id/ecl204"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
+            <LinearLayout
+                android:id="@+id/ECL404"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/subject_frame"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:background="@drawable/subject_frame"
-                    >
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/antenna" />
 
-                    <ImageView
-                        android:layout_margin="1dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/instrumentation"
-                        android:scaleType="centerCrop"
-                        />
+                <TextView
+                    android:fontFamily="@font/robotobold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:text="RF AND MICROWAVE ENGINEERING"
+                    android:textAlignment="center" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="6dp"
-                        android:text="Measurements and Instrumentation"
-                        android:textAlignment="center"
-                        />
+            </LinearLayout>
 
-                </LinearLayout>
+            <LinearLayout
+                android:id="@+id/CSL312"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/subject_frame"
+                android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_margin="1dp"
-                    android:id="@+id/ecl405"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:background="@drawable/subject_frame"
-                    >
+                    android:scaleType="fitXY"
+                    android:src="@drawable/os" />
 
-                    <ImageView
-                        android:layout_margin="1dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/antenna"
-                        android:scaleType="centerCrop"
-                        />
+                <TextView
+                    android:fontFamily="@font/robotobold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:padding="6dp"
+                    android:text="OPERATING SYSTEMS"
+                    android:textAlignment="center" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="6dp"
-                        android:text="Wave Guides and Antennas"
-                        android:textAlignment="center"
-                        />
-
-                </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            >
-
-                <LinearLayout
-                    android:layout_margin="1dp"
-                    android:id="@+id/ecl401"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:background="@drawable/subject_frame"
-                    >
-
-                    <ImageView
-                        android:layout_margin="1dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/hdl"
-                        android:scaleType="centerCrop"
-                        />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="6dp"
-                        android:text="Hardware Description Language"
-                        android:textAlignment="center"
-                        />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/csll01"
-                    android:layout_margin="1dp"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:background="@drawable/subject_frame"
-                    >
-
-                    <ImageView
-                        android:layout_margin="1dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/cao"
-                        android:scaleType="centerCrop"
-                        />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="6dp"
-                        android:text="Computer Architecture and Organization"
-                        android:textAlignment="center"
-                        />
-
-                </LinearLayout>
+            </LinearLayout>
 
         </LinearLayout>
 
     </LinearLayout>
+    </ScrollView>
 </LinearLayout>
 
