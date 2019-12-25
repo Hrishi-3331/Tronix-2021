@@ -10,7 +10,9 @@ import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -27,14 +29,18 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 public class classmates extends AppCompatActivity {
 
     private RecyclerView ClassmatesView;
     private DatabaseReference mref;
+    private static FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +54,8 @@ public class classmates extends AppCompatActivity {
 
         ClassmatesView = (RecyclerView)findViewById(R.id.classmateList);
         mref = FirebaseDatabase.getInstance().getReference().child("users");
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
 
        LinearLayoutManager manager = new LinearLayoutManager(classmates.this, LinearLayoutManager.VERTICAL, true);
        manager.setSmoothScrollbarEnabled(true);
@@ -73,8 +81,10 @@ public class classmates extends AppCompatActivity {
                 viewHolder.setName(model.getName());
                 viewHolder.setEnrollment(model.getEnrol());
                 viewHolder.setProfile_picture();
-                viewHolder.setListner(getApplicationContext());
+                String id = getRef(position).getKey();
+                viewHolder.setListner(getApplicationContext(), id);
                 viewHolder.implementListner(classmates.this, model.getPhotourl());
+
             }
         };
 
@@ -88,7 +98,7 @@ public class classmates extends AppCompatActivity {
         TextView name;
         TextView enrollment;
         String contact;
-        ImageButton callbtn;
+        ImageButton callbtn, msgbtn;
         String imageUrl;
         ImageView profile_picture;
 
@@ -98,6 +108,7 @@ public class classmates extends AppCompatActivity {
             name = (TextView)mView.findViewById(R.id.user_import_name);
             enrollment = (TextView)mView.findViewById(R.id.user_import_enroll);
             callbtn = (ImageButton)mView.findViewById(R.id.user_import_call);
+            msgbtn = (ImageButton)mView.findViewById(R.id.user_import_message);
             profile_picture = (ImageView)mView.findViewById(R.id.user_import_image);
         }
 
@@ -113,11 +124,23 @@ public class classmates extends AppCompatActivity {
             this.contact = contact;
         }
 
-        public void setListner(final Context context){
+        public void setListner(final Context context, final String id){
             callbtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+ contact));
+                    context.startActivity(intent);
+                }
+            });
+
+            msgbtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, chat.class);
+                    intent.putExtra("sender", id);
+                    MessageUIDgenerator uiDgenerator = new MessageUIDgenerator(user.getUid(), id);
+                    uiDgenerator.generateMessageId();
+                    intent.putExtra("id",uiDgenerator.getMessageId());
                     context.startActivity(intent);
                 }
             });
@@ -129,29 +152,6 @@ public class classmates extends AppCompatActivity {
 
         public void setProfile_picture(){
             Picasso.get().load(Uri.parse(imageUrl)).into(profile_picture);
-            /*try {
-                Picasso.get().load(Uri.parse(imageUrl)).into(profile_picture, new Callback() {
-                    @Override
-                    public void onSuccess() {
-                        Drawable drawable = profile_picture.getDrawable();
-                        BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
-                        try {
-                            profile_picture.setImageBitmap(getclip(bitmapDrawable.getBitmap()));
-                        }
-                        catch (Exception e){
-                            e.printStackTrace();
-                        }
-                    }
-
-                    @Override
-                    public void onError(Exception e) {
-
-                    }
-                });
-            }
-            catch (Exception e){
-                e.printStackTrace();
-            } */
         }
 
         public void implementListner(final Context context, final String image){
@@ -184,9 +184,6 @@ public class classmates extends AppCompatActivity {
                 }
             });
         }
-
-
-
     }
 
     public static Bitmap getclip(Bitmap bitmap) {

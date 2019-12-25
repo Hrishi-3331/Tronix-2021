@@ -2,52 +2,32 @@ package com.hrishi_3331.hrishi_studio.tronix2021;
 
 public class Message {
 
-    private String Date;
-    private String Time;
-    private String Content;
-    private String Sender;
+    private String content;
+    private String sender;
 
     public Message() {
 
     }
 
-    public Message(String date, String time, String content, String sender) {
-        Date = date;
-        Time = time;
-        Content = content;
-        Sender = sender;
-    }
-
-    public String getDate() {
-        return Date;
-    }
-
-    public void setDate(String date) {
-        Date = date;
-    }
-
-    public String getTime() {
-        return Time;
-    }
-
-    public void setTime(String time) {
-        Time = time;
+    public Message(String content, String sender) {
+        this.content = content;
+        this.sender = sender;
     }
 
     public String getContent() {
-        return Content;
+        return content;
     }
 
     public void setContent(String content) {
-        Content = content;
+        this.content = content;
     }
 
     public String getSender() {
-        return Sender;
+        return sender;
     }
 
     public void setSender(String sender) {
-        Sender = sender;
+        this.sender = sender;
     }
 }
 

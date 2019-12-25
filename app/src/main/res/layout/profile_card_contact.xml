@@ -54,13 +54,21 @@
 
     </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/user_import_call"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/baseline_call_black_36"
-        android:background="@android:color/transparent"
-        android:layout_marginRight="16dp"/>
+        <ImageButton
+            android:id="@+id/user_import_message"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="20dp"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/baseline_forum_black_36" />
+
+        <ImageButton
+            android:id="@+id/user_import_call"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="16dp"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/baseline_call_black_36" />
 
 </LinearLayout>
 

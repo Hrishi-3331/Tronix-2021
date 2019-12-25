@@ -23,7 +23,7 @@
 
         <ImageView
             android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_height="130dp"
             android:scaleType="fitXY"
             android:src="@drawable/applog"
             android:layout_marginBottom="35dp"/>
@@ -89,6 +89,7 @@
             android:textColor="@android:color/background_light" />
 
         <Button
+            android:fontFamily="@font/robotoregular"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:background="@drawable/signup_button"

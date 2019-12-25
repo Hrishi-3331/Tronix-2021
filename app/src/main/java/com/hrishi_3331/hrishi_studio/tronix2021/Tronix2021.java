@@ -11,7 +11,6 @@ public class Tronix2021 extends Application {
         super.onCreate();
 
         if (!FirebaseApp.getApps(this).isEmpty()){
-
             FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         }
     }

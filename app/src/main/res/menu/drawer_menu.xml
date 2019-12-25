@@ -18,6 +18,10 @@
         android:title="Somophores"
         android:icon="@mipmap/baseline_people_black_24"/>
 
+    <item android:id="@+id/tnp"
+        android:title="Training and Placements"
+        android:icon="@mipmap/baseline_people_black_24"/>
+
     <item android:id="@+id/contact"
         android:title="Contact Us"
         android:icon="@mipmap/baseline_contact_support_black_24"/>

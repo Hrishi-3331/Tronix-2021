@@ -16,4 +16,9 @@
         android:icon="@drawable/clipboard_text"
         android:title="@string/title_notifications" />
 
+    <item
+        android:id="@+id/navigation_classmates"
+        android:icon="@mipmap/baseline_people_black_24"
+        android:title="classmates" />
+
 </menu>

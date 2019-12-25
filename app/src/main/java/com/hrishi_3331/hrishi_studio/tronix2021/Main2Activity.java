@@ -142,6 +142,10 @@ public class Main2Activity extends AppCompatActivity {
                         startActivity(new Intent(Main2Activity.this, Messages.class));
                         break;
 
+                    case R.id.tnp:
+                        startActivity(new Intent(Main2Activity.this, TrainingandPlacement.class));
+                        break;
+
                     default:
                         break;
                 }

@@ -186,4 +186,9 @@ public class Messages extends AppCompatActivity {
             });
         }
     }
+
+    public void New(View view){
+        Intent intent = new Intent(Messages.this, classmates.class);
+        startActivity(intent);
+    }
 }
