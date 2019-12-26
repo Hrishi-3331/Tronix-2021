@@ -171,11 +171,10 @@ public class forum_fragment extends Fragment {
 
         DatabaseReference mref = FirebaseDatabase.getInstance().getReference().child("userposts");
         View mView;
-        TextView author, date, question, description;
+        TextView author, date, question, description, viewmore;
         ImageView image;
-        LinearLayout view_post;
-        LinearLayout write_post, poll_view;
-        TextView write_what, view_what, statement;
+        LinearLayout poll_view;
+        TextView statement;
         TextView option1_text, option2_text, option3_text, option4_text, option5_text;
         TextView option1_strength, option2_strength, option3_strength, option4_strength, option5_strength;
         LinearLayout option1_box, option2_box, option3_box, option4_box, option5_box;
@@ -188,11 +187,7 @@ public class forum_fragment extends Fragment {
             question = mView.findViewById(R.id.post_question);
             description = mView.findViewById(R.id.post_question_desc);
             image = mView.findViewById(R.id.post_image);
-            view_post = mView.findViewById(R.id.view_post);
-            write_post = mView.findViewById(R.id.write_post);
             statement = (TextView) mView.findViewById(R.id.card_statement);
-            view_what = (TextView) mView.findViewById(R.id.view_what);
-            write_what = (TextView) mView.findViewById(R.id.write_what);
             poll_view = (LinearLayout) mView.findViewById(R.id.poll_box);
             option1_text = (TextView) mView.findViewById(R.id.poll_option_1_text);
             option2_text = (TextView) mView.findViewById(R.id.poll_option_2_text);
@@ -204,6 +199,7 @@ public class forum_fragment extends Fragment {
             option3_strength = (TextView) mView.findViewById(R.id.poll_option_3_strength);
             option4_strength = (TextView) mView.findViewById(R.id.poll_option_4_strength);
             option5_strength = (TextView) mView.findViewById(R.id.poll_option_5_strength);
+            viewmore = (TextView)mView.findViewById(R.id.view_more);
             option1_box = (LinearLayout) mView.findViewById(R.id.poll_option_1);
             option2_box = (LinearLayout) mView.findViewById(R.id.poll_option_2);
             option3_box = (LinearLayout) mView.findViewById(R.id.poll_option_3);
@@ -237,33 +233,6 @@ public class forum_fragment extends Fragment {
         }
 
         public void setLayout(String category, Context context, String id) {
-            switch (category) {
-                case "Post":
-                    statement.setText("added a post");
-                    view_what.setText("View comments");
-                    write_what.setText("Write Comment");
-                    break;
-
-                case "Poll":
-                    poll_view.setVisibility(View.VISIBLE);
-                    statement.setText("started a poll");
-                    view_what.setText("View Comments");
-                    write_what.setText("Write Comment");
-                    break;
-
-                case "Birthday":
-                    statement.setText("Today's Birthdays");
-                    view_what.setText("View Wishes");
-                    write_what.setText("Wish now");
-                    break;
-
-                default:
-                    statement.setText("posted a question");
-                    view_what.setText("View Answers");
-                    write_what.setText("Write Answers");
-                    break;
-            }
-
             SharedPreferences preferences = context.getSharedPreferences("pollpreferences", Context.MODE_PRIVATE);
             int temp = preferences.getInt(id, 0);
             switch (temp) {
@@ -323,31 +292,12 @@ public class forum_fragment extends Fragment {
         }
 
         public void implementListners(final Context context, final String id, final String question, final String image_url, final String category) {
-            write_post.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (category.equals("Birthday")){
-                        Intent intent = new Intent(context.getApplicationContext(), answer_question.class);
-                        intent.putExtra("id", id);
-                        intent.putExtra("question", "Happy Birthday!");
-                        context.startActivity(intent);
-                    }
-                    else
-                    {
-                        Intent intent = new Intent(context.getApplicationContext(), answer_question.class);
-                        intent.putExtra("id", id);
-                        intent.putExtra("question", question);
-                        context.startActivity(intent);
-                    }
-                }
-            });
 
-            view_post.setOnClickListener(new View.OnClickListener() {
+            viewmore.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(context.getApplicationContext(), view_answers.class);
+                    Intent intent = new Intent(context, DetailedPost.class);
                     intent.putExtra("id", id);
-                    intent.putExtra("question", question);
                     context.startActivity(intent);
                 }
             });

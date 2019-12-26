@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/subject_card"
-    android:layout_marginTop="4dp"
+    android:layout_margin="4dp"
     android:elevation="8dp"
     >
 
@@ -18,15 +18,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="-2dp">
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/post_author"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/mfont1"
-            android:padding="8dp"
+            android:paddingLeft="8dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
             android:text="Someone"
             android:textColor="@android:color/black"
             android:textSize="15sp"
@@ -36,13 +36,10 @@
             android:id="@+id/card_statement"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/mfont1"
-            android:paddingBottom="8dp"
-            android:paddingEnd="8dp"
-            android:paddingTop="8dp"
+            android:padding="8dp"
             android:text="posted a question"
-            android:textSize="15sp"
-            android:textStyle="bold" />
+            android:fontFamily="@font/roboto"
+            android:textSize="15sp" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -62,9 +59,13 @@
 
     </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            />
+
     <ImageView
-        android:layout_marginLeft="0.4dp"
-        android:layout_marginRight="0.4dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
@@ -76,16 +77,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="serif"
-        android:paddingBottom="6dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="2dp"
+        android:padding="10dp"
         android:text="your question here"
-        android:textColor="@android:color/black"
+        android:textColor="@color/colorPrimary"
         android:textSize="18sp"
         android:textStyle="bold" />
 
         <TextView
+            android:fontFamily="@font/roboto"
             android:id="@+id/post_question_desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -94,7 +93,7 @@
             android:paddingRight="10dp"
             android:text="description here"
             android:textColor="@android:color/black"
-            android:textSize="14sp" />
+            android:textSize="15sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -327,55 +326,19 @@
         >
 
         <LinearLayout
-            android:id="@+id/view_post"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center">
+            />
 
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:scaleType="fitXY"
-                app:srcCompat="@mipmap/baseline_remove_red_eye_black_24" />
-
-            <TextView
-                android:id="@+id/view_what"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/adamina"
-                android:padding="5dp"
-                android:text="View Answers"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="2dp"
-            android:layout_height="match_parent"
-            android:background="@android:color/darker_gray"/>
-
-        <LinearLayout
-            android:id="@+id/write_post"
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/view_more"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:scaleType="fitXY"
-                app:srcCompat="@mipmap/baseline_border_color_black_24" />
-
-            <TextView
-                android:id="@+id/write_what"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/adamina"
-                android:padding="5dp"
-                android:text="Write Answer"
-                android:textStyle="bold" />
-        </LinearLayout>
+            android:padding="3dp"
+            android:text="View more"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold" />
 
     </LinearLayout>
     </LinearLayout>

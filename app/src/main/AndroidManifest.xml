@@ -73,7 +73,8 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".Messages" />
-        <activity android:name=".TrainingandPlacement"></activity>
+        <activity android:name=".TrainingandPlacement" />
+        <activity android:name=".DetailedPost"></activity>
     </application>
 
 </manifest>
