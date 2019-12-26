@@ -32,7 +32,7 @@ import java.util.Objects;
 
 public class addPost extends AppCompatActivity {
 
-    private EditText questionbox;
+    private EditText questionbox, descriptionbox;
     private final int IMAGE_REQUEST_CODE = 8;
     boolean ImageAttached;
     private Uri imaage_uri;
@@ -54,6 +54,7 @@ public class addPost extends AppCompatActivity {
         setContentView(R.layout.activity_add_post);
 
         questionbox = (EditText)findViewById(R.id.question);
+        descriptionbox = (EditText)findViewById(R.id.question_desc);
         ImageAttached = false;
         attImage = (ImageView)findViewById(R.id.add_post_image);
         cody = (CoordinatorLayout)findViewById(R.id.cod);
@@ -126,6 +127,7 @@ public class addPost extends AppCompatActivity {
             ref3.setValue(ref2.getParent().getKey());
             DatabaseReference ref4 = ref1.child("question");
             ref4.setValue(question);
+            ref1.child("description").setValue(descriptionbox.getText().toString());
             ref1.child("category").setValue(postCategory);
             final DatabaseReference ref5 = ref1.child("image");
             if (ImageAttached){

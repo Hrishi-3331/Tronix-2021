@@ -84,6 +84,7 @@
         android:textStyle="bold" />
 
         <TextView
+            android:lineSpacingExtra="3dp"
             android:fontFamily="@font/roboto"
             android:id="@+id/post_question_desc"
             android:layout_width="match_parent"

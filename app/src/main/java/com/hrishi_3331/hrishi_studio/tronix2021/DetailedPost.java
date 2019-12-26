@@ -41,7 +41,7 @@ public class DetailedPost extends AppCompatActivity {
     private EditText comment_box;
     private RecyclerView commentsView;
     private LinearLayoutManager manager;
-    private WebView Description;
+    private TextView Description;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +55,7 @@ public class DetailedPost extends AppCompatActivity {
         mUser = mAuth.getCurrentUser();
 
         postTitle = (TextView)findViewById(R.id.title_detail_feed);
-        Description = (WebView)findViewById(R.id.content_detail_feed);
+        Description = (TextView)findViewById(R.id.content_detail_feed);
         postImage = (ImageView)findViewById(R.id.image_detail_feed);
 
         comment_box = (EditText)findViewById(R.id.comment_box);
@@ -196,11 +196,7 @@ public class DetailedPost extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 if (dataSnapshot.getValue() != null) {
-                    String description = "<html><body><p align=\"justify\" style=\"padding: 6px; font-size:11pt\">";
-                    description += dataSnapshot.getValue().toString() + "<br><br>";
-                    description += "</p></body></html>";
-
-                    Description.loadData(description, "text/html", "utf-8");
+                    Description.setText(dataSnapshot.getValue().toString());
                 }
             }
 
