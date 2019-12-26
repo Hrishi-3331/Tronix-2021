@@ -2,23 +2,19 @@ package com.hrishi_3331.hrishi_studio.tronix2021;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.view.Gravity;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,22 +28,28 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.makeramen.roundedimageview.RoundedImageView;
 import com.squareup.picasso.Picasso;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
 
 public class chat extends AppCompatActivity {
 
     private String sender_id;
-    private String sender_photo;
-    private String my_photo;
+    private static String sender_photo, my_photo;
     private String conversation_id;
     private DatabaseReference jRef;
     private TextView name;
-    private ImageView image;
+    private RoundedImageView image;
     private RecyclerView messages;
     private EditText new_message;
     private String contact;
     private LinearLayoutManager manager;
     private static FirebaseUser user;
+    private ScrollView scroller;
+    private static String Sender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,16 +61,20 @@ public class chat extends AppCompatActivity {
         conversation_id = intent.getStringExtra("id");
 
         name = (TextView)findViewById(R.id.m_name);
-        image = (ImageView)findViewById(R.id.m_image);
+        image = (RoundedImageView) findViewById(R.id.m_image);
         new_message = (EditText)findViewById(R.id.new_message);
         messages = (RecyclerView)findViewById(R.id.chat_messages);
+        scroller = (ScrollView)findViewById(R.id.scroller) ;
 
         user = FirebaseAuth.getInstance().getCurrentUser();
+
+        my_photo = FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl().toString();
 
         FirebaseDatabase.getInstance().getReference().child("users").child(sender_id).child("name").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 name.setText(dataSnapshot.getValue().toString());
+                Sender = dataSnapshot.getValue().toString();
             }
 
             @Override
@@ -94,8 +100,6 @@ public class chat extends AppCompatActivity {
 
             }
         });
-
-        my_photo = user.getPhotoUrl().toString();
 
         FirebaseDatabase.getInstance().getReference().child("users").child(sender_id).child("contact").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -124,7 +128,7 @@ public class chat extends AppCompatActivity {
         FirebaseRecyclerAdapter<Message, ConversationViewHolder> adapter = new FirebaseRecyclerAdapter<Message, ConversationViewHolder>(Message.class, R.layout.chat_message, ConversationViewHolder.class, jRef) {
             @Override
             protected void populateViewHolder(ConversationViewHolder viewHolder, Message model, int position) {
-                viewHolder.setMessage(model.getSender(), model.getContent(), chat.this);
+                viewHolder.setMessage(model.getSender(), model.getContent(), model.getDate());
             }
         };
 
@@ -135,24 +139,37 @@ public class chat extends AppCompatActivity {
 
         private View mView;
         private String sender;
-        private TextView message;
-        private LinearLayout layout;
-        private LinearLayout main_layout;
+        private TextView message, senderv, date;
+        private RoundedImageView imageView;
 
         public ConversationViewHolder(@NonNull View itemView) {
             super(itemView);
             mView = itemView;
             message = mView.findViewById(R.id.message_text);
-            layout = mView.findViewById(R.id.box);
-            main_layout = mView.findViewById(R.id.box2);
+            senderv = mView.findViewById(R.id.message_sender);
+            date = mView.findViewById(R.id.message_date);
+            imageView = (RoundedImageView)mView.findViewById(R.id.message_sender_image);
         }
 
-        public void setMessage(String sender, String message, Context context){
+        public void setMessage(String sender, String message, String date){
             this.message.setText(message);
+            this.date.setText(date);
             this.sender = sender;
-            if (!sender.equals(user.getUid())){
-                layout.setGravity(Gravity.END);
-                main_layout.setBackground(ContextCompat.getDrawable(context, R.drawable.message_layout2));
+            if (sender.equals(user.getUid())){
+               senderv.setText("You");
+               try {
+                   Picasso.get().load(my_photo).into(imageView);
+               }catch (Exception e){
+                   e.printStackTrace();
+               }
+            }
+            else {
+                senderv.setText(Sender);
+                try {
+                    Picasso.get().load(sender_photo).into(imageView);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
             }
         }
     }
@@ -179,15 +196,13 @@ public class chat extends AppCompatActivity {
 
         DatabaseReference aref = FirebaseDatabase.getInstance().getReference().child("Chats").child(conversation_id).child("conversation");
         if (!message.isEmpty()){
-            InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-            View Jview = getCurrentFocus();
-            if (Jview == null) {
-                Jview = new View(chat.this);
-            }
-            assert imm != null;
-            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
             DatabaseReference messageRef = aref.push();
             messageRef.child("sender").setValue(user.getUid());
+            Calendar calendar = Calendar.getInstance(Locale.getDefault());
+            java.util.Date date = calendar.getTime();
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+            String mDate = format.format(date);
+            messageRef.child("date").setValue(mDate);
             FirebaseDatabase.getInstance().getReference().child("Chats").child(conversation_id).child("last_message").setValue(message);
             messageRef.child("content").setValue(message).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
@@ -201,6 +216,9 @@ public class chat extends AppCompatActivity {
                 }
             });
         }
+
+        scroller.fullScroll(ScrollView.FOCUS_DOWN);
+
     }
 
     public void finishActivity(View view){

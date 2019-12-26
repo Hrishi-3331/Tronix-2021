@@ -22,6 +22,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.makeramen.roundedimageview.RoundedImageView;
 import com.squareup.picasso.Picasso;
 
 public class Messages extends AppCompatActivity {
@@ -78,7 +79,7 @@ public class Messages extends AppCompatActivity {
     public static class MessageViewHolder extends RecyclerView.ViewHolder{
 
         private View jView;
-        private ImageView jImage;
+        private RoundedImageView jImage;
         private TextView sender_name;
         private TextView Message;
         private String sender_id;
@@ -87,7 +88,7 @@ public class Messages extends AppCompatActivity {
         public MessageViewHolder(@NonNull View itemView) {
             super(itemView);
             jView = itemView;
-            jImage = (ImageView)jView.findViewById(R.id.sender_image);
+            jImage = (RoundedImageView) jView.findViewById(R.id.sender_image);
             sender_name = (TextView)jView.findViewById(R.id.sender_name);
             Message = (TextView)jView.findViewById(R.id.sender_last_message);
         }
